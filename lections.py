@@ -216,3 +216,32 @@ print(text.replace('ещё','ЕЩЁ')) # СъЕШЬ ЕЩЁ этих МяГкИх
 #       print(i)             # вывод каждого элемента списка
 #=========================================================
 
+# Можно распаковать кортеж в независимые переменные:
+# t = tuple(['red', 'green', 'blue'])
+# red, green, blue = t
+# print('r:{} g:{} b:{}'.format(red, green, blue)) # или  r:red g:green b:blue
+
+#=========================================================
+
+# dictionary = {}
+# dictionary ={'up': '↑', 'left': '←', 'down': '↓', 'right': '→'}
+# print(dictionary) # {'up':'↑', 'left':'←', 'down':'↓', 'right':'→'}
+# print(dictionary['left']) # ←
+
+# # типы ключей могут отличаться
+# print(dictionary['up']) # ↑
+
+# # типы ключей могут отличаться
+# dictionary['left'] = '⇐'
+# print(dictionary['left']) # ⇐
+
+# del dictionary['left'] # удаление элемента
+
+# for item in dictionary: # for (k,v) in dictionary.items():
+#   print('{}: {}'.format(item, dictionary[item]))
+
+# # up: ↑
+# # down: ↓
+# # right: →
+#=========================================================
+
