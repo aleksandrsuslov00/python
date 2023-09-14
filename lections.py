@@ -279,4 +279,146 @@ print(text.replace('ещё','ЕЩЁ')) # СъЕШЬ ЕЩЁ этих МяГкИх
 # b = frozenset(a)
 # print(b) # frozenset({1, 2, 3, 5, 8})
 
-#=========================================================
+#=========================================================  
+
+#Функция : def
+
+# def sum_numbers(n):
+#     summa = 0
+#     for  i in range(1, n + 1):
+#         summa += i
+#     return(summa)  # return Завершает программу и выводит значение
+#     #print('stop') --- до принта не дойдет так как см.выше
+# print(sum_numbers(5))  
+        #или
+        # a = sum_numbers(5)
+        # print(a)
+
+#========================================================= 
+
+# def sum_str(*arguments):  #звездочка позволяет передавать в функции сколько угодно знаков
+#     res = ''
+#     for i in arguments:
+#         res += i
+#     return res
+
+# print(sum_str('a','b','c'))
+
+# print(sum_str('a','b','c','d','e')) #доступно увеличение аргументов так как в ф-ции "*"
+
+# def sum_int(*n):   #звездочка работает с int
+#     res = 0
+#     for i in n:
+#         res += i
+#     return res
+# print(sum_int(1,10,2))
+
+#========================================================= 
+
+# def max1(a,b):
+#     if a > b:
+#         return a
+#     #  else можно не писать, достаточно ретурнов
+#     #  else: return b
+#     return b
+
+# print(max1(2,3))
+
+#========================================================= 
+#импорт функции из другого файла            
+
+# import modul1 (файл модуль один точка пу)   # #from modul1 import *  импорт всех функций      # import modul1  as m1   
+
+# print(modul1.max1(5,9))                            # print(modul1.max1(5,9))                  # print(modul1.m1(5,9))                                         
+
+#========================================================= 
+
+#рекурсия фибоначчи
+
+# def fib(n):
+#     if n in [1, 2]:             #важно делать выход из рекурсии 
+#         return 1
+#     return fib(n - 1) + fib(n - 2)
+
+
+# list_1 = []
+# for i in range(1, 10):
+#     list_1.append(fib(i))
+# print(list_1)    
+
+#========================================================= 
+
+# быстрая сортировка
+
+# def quick_sort(array):
+#     if len(array) <= 1:
+#         return array
+#     else: 
+#         pivot = array[0] #  pivot - первый элемент, с кот. идет сравнение 
+#                          #  и дальнейшая разбивка на 2 списка less и greater
+
+#     less = [i for i in array[1:] if i <= pivot] #все элементы после первого, добавляя только >= pivot    
+#     greater = [i for i in array[1:] if i > pivot] #все элементы после первого, добавляя только < pivot
+#     return quick_sort(less) + [pivot] + quick_sort(greater)
+
+# print(quick_sort([10,5,2]))
+
+# ● 1-е повторение рекурсии:
+#   ○ array = [10, 5, 2, 3]
+#   ○ pivot = 10
+#   ○ less = [5, 2, 3]
+#   ○ greater = []
+#   ○ return quicksort([5, 2, 3]) + [10] + quicksort([])
+
+# ● 2-е повторение рекурсии:
+#   ○ array = [5, 2, 3]
+#   ○ pivot = 5
+#   ○ less = [2, 3]
+#   ○ greater = []
+#   ○ return quicksort([2, 3]) + [5] + quicksort([]) 
+# 
+# # Важно! Не забывайте, что здесь помимо вызова рекурсии добавляется список [10]
+
+# ● 3-е повторение рекурсии:
+#   ○ array = [2, 3]
+#   ○ return [2, 3]     
+# 
+# # Сработал базовый случай рекурсии
+#  На этом работа рекурсии завершилась и итоговый список будет выглядеть таким образом: 
+# [2, 3] + [5] + [10] = [2, 3, 5, 10]
+
+#========================================================= 
+
+# #Сортировка слиянием
+# def merge_sort(numbers):
+#     if len(numbers) > 1:
+#         mid = len(numbers) // 2 # деление списка на двое
+#         left = numbers[:mid]  # от начала до середины
+#         right = numbers[mid:]  # от серидины до конца
+#         merge_sort(left)
+#         merge_sort(right)
+#         i = j = k = 0
+#         while i < len(left) and j < len(right):
+#             if left[i] < right[j]:
+#                 numbers[k] = left[i]
+#                 i += 1
+#             else: 
+#                 numbers[k] = right[j]
+#                 j += 1
+#             k += 1
+        
+#         while i < len(left):
+#             numbers[k] = left[i]
+#             i += 1
+#             k += 1
+
+#         while j < len(right):
+#             numbers[k] = right[j]
+#             j += 1
+#             k += 1
+
+# list_1 = [1,5,6,7,8,2,4,66,7,87,2,0,21]
+# merge_sort(list_1)
+# print(list_1)
+
+#========================================================= 
